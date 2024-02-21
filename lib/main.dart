@@ -1,3 +1,4 @@
+import 'package:firsttask/UI/HomeScreen/Hadeth/HadethDetials.dart';
 import 'package:firsttask/UI/HomeScreen/Hadeth/HadethScreen.dart';
 import 'package:firsttask/UI/HomeScreen/HomePage.dart';
 import 'package:firsttask/UI/suraDetails/SuraDetails.dart';
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
         TasbehScreen.routeName: (context) => TasbehScreen(),
         Radioscreen.routeName: (context) => Radioscreen(),
         SuraDetails.routeName: (context) => SuraDetails(),
+        HadethDetails.routeName:(context) => HadethDetails(),
         HadethScreen.routeName: (context) => HadethScreen(),
       },
     );
