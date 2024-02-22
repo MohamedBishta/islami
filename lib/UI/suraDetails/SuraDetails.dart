@@ -1,3 +1,4 @@
+import 'package:firsttask/UI/MyThemeData.dart';
 import 'package:firsttask/UI/suraDetails/verseItem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -23,7 +24,7 @@ class _SuraDetailsState extends State<SuraDetails> {
       height: double.infinity,
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/backgrounding.jpg"),
+              image: AssetImage(MyThemeData.getMainBackgroundImage()),
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
@@ -41,7 +42,7 @@ class _SuraDetailsState extends State<SuraDetails> {
                     itemCount: versesList.length,
                     separatorBuilder: (_, __) {
                       return Container(
-                        color: Theme.of(context).primaryColor,
+                        color: Theme.of(context).colorScheme.primary,
                         margin: EdgeInsets.symmetric(horizontal: 64),
                         height: 2,
                         width: double.infinity,

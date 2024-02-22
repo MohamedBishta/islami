@@ -47,8 +47,8 @@ class _TasbehScreenState extends State<TasbehScreen> {
                       padding: const EdgeInsets.only(top: 73),
                       child: Transform.rotate(
                           angle: Rotate,
-                          child: Image.asset(
-                              "assets/images/body_sebha_logo.png")),
+                          child:
+                              Image.asset("assets/images/body_sebha_logo.png")),
                     )),
               ],
             ),
@@ -97,7 +97,7 @@ class _TasbehScreenState extends State<TasbehScreen> {
   void CalcCounter(int counter) {
     if (counter == 34) {
       Counter = 0;
-      if (index >= zikr.length-1) {
+      if (index >= zikr.length - 1) {
         index = 0;
       } else {
         index++;

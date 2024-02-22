@@ -2,6 +2,7 @@ import 'package:firsttask/UI/HomeScreen/Hadeth/HadethScreen.dart';
 import 'package:firsttask/UI/HomeScreen/Quran/QuranScreen.dart';
 import 'package:firsttask/UI/HomeScreen/Radio/RadioScreen.dart';
 import 'package:firsttask/UI/HomeScreen/Tasbeh/TasbehScreen.dart';
+import 'package:firsttask/UI/MyThemeData.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,7 +22,9 @@ class _HomePageState extends State<HomePage> {
       height: double.infinity,
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/images/backgrounding.jpg"),
+              image: AssetImage(
+                MyThemeData.getMainBackgroundImage(),
+              ),
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(

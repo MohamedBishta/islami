@@ -1,4 +1,5 @@
 import 'package:firsttask/UI/HomeScreen/Hadeth/Hadeth.dart';
+import 'package:firsttask/UI/MyThemeData.dart';
 import 'package:flutter/material.dart';
 
 class HadethDetails extends StatelessWidget {
@@ -13,11 +14,11 @@ class HadethDetails extends StatelessWidget {
         height: double.infinity,
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage("assets/images/backgrounding.jpg"),
+                image: AssetImage(MyThemeData.getMainBackgroundImage()),
                 fit: BoxFit.fill)),
         child: Scaffold(
           appBar: AppBar(
-            title: Text("${hadeth.title}"),
+            title: Text("${hadeth.title}",style: Theme.of(context).textTheme.titleMedium,),
           ),
           body: Container(
             height: double.infinity,
@@ -29,7 +30,7 @@ class HadethDetails extends StatelessWidget {
                   child: Text(
                     "${hadeth.content}",
                     textDirection: TextDirection.rtl,
-                    style: TextStyle(fontSize: 22),
+                    style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),
               ),
