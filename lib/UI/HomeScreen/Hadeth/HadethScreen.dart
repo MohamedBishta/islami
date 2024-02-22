@@ -37,7 +37,7 @@ class _HadethScreenState extends State<HadethScreen> {
                     itemCount: allHadeth.length,
                     separatorBuilder: (_, __) {
                       return Container(
-                        color: Theme.of(context).primaryColor,
+                        color: Theme.of(context).colorScheme.secondary,
                         margin: EdgeInsets.symmetric(horizontal: 64),
                         height: 2,
                         width: double.infinity,

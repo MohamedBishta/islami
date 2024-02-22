@@ -16,7 +16,7 @@ int versesNumber ;
       child: Container(
         alignment: Alignment.center,
         padding: EdgeInsets.symmetric(vertical: 12),
-          child: Text(text,style: TextStyle(fontSize: 24),)),
+          child: Text(text,style: Theme.of(context).textTheme.titleMedium,)),
     );
   }
 

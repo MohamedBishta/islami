@@ -11,7 +11,7 @@ class verseItem extends StatelessWidget {
       child: Text(
         textAlign:TextAlign.center ,
         Content,
-        style: TextStyle(fontSize: 20,),
+        style: Theme.of(context).textTheme.bodyMedium,
       ),
     );
   }

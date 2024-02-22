@@ -32,7 +32,7 @@ List <String> souraNames = [
             child: ListView.separated(itemBuilder: (context, index) {
           return SouraWidget(souraNames[index],index+1);
         },itemCount: souraNames.length, separatorBuilder: (_, __) { return Container(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).colorScheme.secondary,
           margin: EdgeInsets.symmetric(horizontal: 64),
           height: 2,
           width: double.infinity,
