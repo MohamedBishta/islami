@@ -4,6 +4,7 @@ import 'package:firsttask/UI/HomeScreen/Radio/RadioScreen.dart';
 import 'package:firsttask/UI/HomeScreen/Tasbeh/TasbehScreen.dart';
 import 'package:firsttask/UI/MyThemeData.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatefulWidget {
   static const String routName = 'HomePage';
@@ -28,7 +29,7 @@ class _HomePageState extends State<HomePage> {
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
-          title: Text("islami"),
+          title: Text(AppLocalizations.of(context)!.appTitle),
         ),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: selectedTabIndex,
@@ -41,20 +42,20 @@ class _HomePageState extends State<HomePage> {
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage("assets/images/quran.png")),
-                  label: 'Quran'),
+                  label: AppLocalizations.of(context)!.quranScreen),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(
                       AssetImage("assets/images/quran-quran-svgrepo-com.png")),
-                  label: 'Ahadeth'),
+                  label: AppLocalizations.of(context)!.hadethScreen),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage("assets/images/radio_blue.png")),
-                  label: 'Radio'),
+                  label: AppLocalizations.of(context)!.radioScreen),
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage("assets/images/sebha_blue.png")),
-                  label: 'Sebha'),
+                  label: AppLocalizations.of(context)!.tasbehScreen),
             ]),
         body: tabs[selectedTabIndex]
       ),
@@ -65,5 +66,6 @@ class _HomePageState extends State<HomePage> {
     QuranScreen(),
     HadethScreen(),
     Radioscreen(),
-    TasbehScreen() ];
+    TasbehScreen()
+  ];
 }

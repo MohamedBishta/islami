@@ -7,7 +7,7 @@ import 'package:firsttask/UI/HomeScreen/Radio/RadioScreen.dart';
 import 'package:firsttask/UI/HomeScreen/Tasbeh/TasbehScreen.dart';
 import 'package:firsttask/UI/Splash/SplashScreen.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 void main() {
   runApp(MyApp());
 }
@@ -15,8 +15,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: Locale('ar'),
       debugShowCheckedModeBanner: false,
       title: 'Islami',
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       theme: MyThemeData.light,
       darkTheme: MyThemeData.dark ,
       themeMode: ThemeMode.dark,
