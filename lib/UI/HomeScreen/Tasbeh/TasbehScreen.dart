@@ -1,3 +1,4 @@
+import 'package:firsttask/UI/MyThemeData.dart';
 import 'package:flutter/material.dart';
 
 class TasbehScreen extends StatefulWidget {
@@ -32,7 +33,9 @@ class _TasbehScreenState extends State<TasbehScreen> {
             child: Stack(
               alignment: Alignment.topCenter,
               children: [
-                Image.asset("assets/images/head_sebha_logo.png"),
+                Image.asset(MyThemeData.isDarkEnable? "assets/images/head of sebha_dark.png" :
+                "assets/images/head_sebha_logo.png"
+                 ),
                 InkWell(
                     highlightColor: Colors.transparent,
                     hoverColor: Colors.transparent,
@@ -48,7 +51,9 @@ class _TasbehScreenState extends State<TasbehScreen> {
                       child: Transform.rotate(
                           angle: Rotate,
                           child:
-                              Image.asset("assets/images/body_sebha_logo.png")),
+                              Image.asset(MyThemeData.isDarkEnable? "assets/images/body of sebha_dark.png" :
+                              "assets/images/body_sebha_logo.png"
+                               )),
                     )),
               ],
             ),
@@ -57,12 +62,14 @@ class _TasbehScreenState extends State<TasbehScreen> {
             "عدد التسبيحات",
             style: TextStyle(
               fontSize: 25,
+              fontWeight: FontWeight.w600,
             ),
           ),
           Container(
               margin: EdgeInsets.symmetric(vertical: 20),
               decoration: BoxDecoration(
-                  color: Color(0xFFB7935F),
+                  color:  MyThemeData.isDarkEnable? MyThemeData.primaryDark :
+                  MyThemeData.primaryLight,
                   borderRadius: BorderRadius.circular(25)),
               alignment: Alignment.center,
               height: 81,
@@ -79,7 +86,8 @@ class _TasbehScreenState extends State<TasbehScreen> {
               Container(
                   padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                      color: Color(0xFFB7935F),
+                      color: MyThemeData.isDarkEnable ? MyThemeData.secondaryDark :
+                      MyThemeData.primaryLight,
                       borderRadius: BorderRadius.circular(25)),
                   alignment: Alignment.center,
                   child: Text(
