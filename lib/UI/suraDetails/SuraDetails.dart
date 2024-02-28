@@ -1,7 +1,8 @@
-import 'package:firsttask/UI/MyThemeData.dart';
+import 'package:firsttask/Provider/SettingProvider.dart';
 import 'package:firsttask/UI/suraDetails/verseItem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 
 class SuraDetails extends StatefulWidget {
   static const String routeName = 'suraDetails';
@@ -16,6 +17,7 @@ class _SuraDetailsState extends State<SuraDetails> {
 
   @override
   Widget build(BuildContext context) {
+    var settingProvider = Provider.of<SettingProvider>(context);
     SuraDetailsarg args =
         ModalRoute.of(context)?.settings.arguments as SuraDetailsarg;
     if (versesList.isEmpty) loadSoura(args.suraNum);
@@ -24,7 +26,7 @@ class _SuraDetailsState extends State<SuraDetails> {
       height: double.infinity,
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(MyThemeData.getMainBackgroundImage()),
+              image: AssetImage(settingProvider.getMainBackgroundImage()),
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(

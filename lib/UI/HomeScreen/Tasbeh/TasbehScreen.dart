@@ -1,5 +1,7 @@
+import 'package:firsttask/Provider/SettingProvider.dart';
 import 'package:firsttask/UI/MyThemeData.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class TasbehScreen extends StatefulWidget {
   static const String routeName = 'tasbehPage';
@@ -24,6 +26,7 @@ class _TasbehScreenState extends State<TasbehScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var settingProvider = Provider.of<SettingProvider>(context);
     CalcCounter(Counter);
     return Center(
       child: Column(
@@ -33,7 +36,7 @@ class _TasbehScreenState extends State<TasbehScreen> {
             child: Stack(
               alignment: Alignment.topCenter,
               children: [
-                Image.asset(MyThemeData.isDarkEnable? "assets/images/head of sebha_dark.png" :
+                Image.asset(settingProvider.isDarkEnable()? "assets/images/head of sebha_dark.png" :
                 "assets/images/head_sebha_logo.png"
                  ),
                 InkWell(
@@ -51,7 +54,7 @@ class _TasbehScreenState extends State<TasbehScreen> {
                       child: Transform.rotate(
                           angle: Rotate,
                           child:
-                              Image.asset(MyThemeData.isDarkEnable? "assets/images/body of sebha_dark.png" :
+                              Image.asset(settingProvider.isDarkEnable()? "assets/images/body of sebha_dark.png" :
                               "assets/images/body_sebha_logo.png"
                                )),
                     )),
@@ -68,7 +71,7 @@ class _TasbehScreenState extends State<TasbehScreen> {
           Container(
               margin: EdgeInsets.symmetric(vertical: 20),
               decoration: BoxDecoration(
-                  color:  MyThemeData.isDarkEnable? MyThemeData.primaryDark :
+                  color:  settingProvider.isDarkEnable()? MyThemeData.primaryDark :
                   MyThemeData.primaryLight,
                   borderRadius: BorderRadius.circular(25)),
               alignment: Alignment.center,
@@ -86,7 +89,7 @@ class _TasbehScreenState extends State<TasbehScreen> {
               Container(
                   padding: EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                      color: MyThemeData.isDarkEnable ? MyThemeData.secondaryDark :
+                      color: settingProvider.isDarkEnable() ? MyThemeData.secondaryDark :
                       MyThemeData.primaryLight,
                       borderRadius: BorderRadius.circular(25)),
                   alignment: Alignment.center,

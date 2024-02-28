@@ -1,7 +1,12 @@
 {
-  "appTitle" : "إسلامي",
+    "appTitle" : "إسلامي",
     "quranScreen" : "القران",
     "hadethScreen" : "الحديث",
     "radioScreen" : "الاذاعه",
-    "tasbehScreen" : "السبحه"
+    "tasbehScreen" : "السبحه",
+    "settingScreen" : "الاعدادات",
+    "language": "اللغه",
+    "theme": "المظهر",
+    "dark": "ليلي",
+    "light": "نهاري"
 }

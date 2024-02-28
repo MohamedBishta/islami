@@ -1,6 +1,7 @@
+import 'package:firsttask/Provider/SettingProvider.dart';
 import 'package:firsttask/UI/HomeScreen/Hadeth/Hadeth.dart';
-import 'package:firsttask/UI/MyThemeData.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class HadethDetails extends StatelessWidget {
   static const String routeName = 'HadethDetials';
@@ -8,13 +9,14 @@ class HadethDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var settingProvider = Provider.of<SettingProvider>(context);
     var hadeth = ModalRoute.of(context)?.settings.arguments as Hadeth;
     return Container(
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage(MyThemeData.getMainBackgroundImage()),
+                image: AssetImage(settingProvider.getMainBackgroundImage()),
                 fit: BoxFit.fill)),
         child: Scaffold(
           appBar: AppBar(

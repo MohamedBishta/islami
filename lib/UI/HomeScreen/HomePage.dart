@@ -1,10 +1,12 @@
+import 'package:firsttask/Provider/SettingProvider.dart';
 import 'package:firsttask/UI/HomeScreen/Hadeth/HadethScreen.dart';
 import 'package:firsttask/UI/HomeScreen/Quran/QuranScreen.dart';
 import 'package:firsttask/UI/HomeScreen/Radio/RadioScreen.dart';
+import 'package:firsttask/UI/HomeScreen/Settings/SettingScreen.dart';
 import 'package:firsttask/UI/HomeScreen/Tasbeh/TasbehScreen.dart';
-import 'package:firsttask/UI/MyThemeData.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
   static const String routName = 'HomePage';
@@ -18,13 +20,14 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var settingProvider = Provider.of<SettingProvider>(context);
     return Container(
       width: double.infinity,
       height: double.infinity,
       decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                MyThemeData.getMainBackgroundImage(),
+                settingProvider.getMainBackgroundImage(),
               ),
               fit: BoxFit.fill)),
       child: Scaffold(
@@ -56,6 +59,10 @@ class _HomePageState extends State<HomePage> {
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(AssetImage("assets/images/sebha_blue.png")),
                   label: AppLocalizations.of(context)!.tasbehScreen),
+              BottomNavigationBarItem(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  icon: Icon(Icons.settings),
+                  label: AppLocalizations.of(context)!.settingScreen),
             ]),
         body: tabs[selectedTabIndex]
       ),
@@ -66,6 +73,7 @@ class _HomePageState extends State<HomePage> {
     QuranScreen(),
     HadethScreen(),
     Radioscreen(),
-    TasbehScreen()
+    TasbehScreen(),
+    SettingScreen(),
   ];
 }
