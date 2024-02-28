@@ -3,5 +3,10 @@
    "quranScreen": "Quran",
    "hadethScreen": "Hadeth",
    "radioScreen": "Radio",
-   "tasbehScreen": "Sebha"
+   "tasbehScreen": "Sebha",
+   "settingScreen": "Setting",
+   "language": "Language",
+   "theme": "Theme",
+   "dark": "Dark",
+   "light": "Light"
 }
