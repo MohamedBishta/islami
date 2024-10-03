@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class MyThemeData {
   static const Color primaryLight = Color(0xFFB7935F);
   static const Color primaryDark = Color(0xFF141A2E);
+  static const Color secondaryLight = Color(0xFFB7935F);
   static const Color secondaryDark = Color(0xFFFACC1D);
   static const String fontfamily = "messiri";
 
